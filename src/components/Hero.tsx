@@ -1,10 +1,41 @@
 import { Button } from "@/components/ui/button";
+import { useAuth } from '@/hooks/useAuth';
+import { Link } from 'react-router-dom';
+import { LogOut, User, Sparkles, Palette, ChefHat, PenTool } from "lucide-react";
 import heroImage from "@/assets/hero-creativity.jpg";
-import { Sparkles, Palette, ChefHat, PenTool } from "lucide-react";
 
 export const Hero = () => {
+  const { user, signOut, loading } = useAuth();
+
   return (
     <section className="min-h-screen relative overflow-hidden">
+      {/* Auth Navigation */}
+      <div className="absolute top-6 right-6 z-20">
+        {user ? (
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 text-foreground/80">
+              <User className="w-4 h-4" />
+              <span className="text-sm">{user.email}</span>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={signOut}
+              className="bg-background/20 border-border/50 hover:bg-background/40"
+            >
+              <LogOut className="w-4 h-4 mr-2" />
+              Sign Out
+            </Button>
+          </div>
+        ) : !loading && (
+          <Link to="/auth">
+            <Button variant="outline" className="bg-background/20 border-border/50 hover:bg-background/40">
+              Sign In
+            </Button>
+          </Link>
+        )}
+      </div>
+
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
