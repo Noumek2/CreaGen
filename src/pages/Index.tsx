@@ -2,7 +2,7 @@ import { Hero } from "@/components/Hero";
 import { CreativeDomains } from "@/components/CreativeDomains";
 import { FeaturedCreations } from "@/components/FeaturedCreations";
 import { CommunityStats } from "@/components/CommunityStats";
-import AttendanceChart from "@/components/AttendanceChart";
+import AttendanceChart from "@/components/AttendanceChart.jsx";
 
 const Index = () => {
   return (

@@ -3,15 +3,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-interface AttendanceData {
-  name: string;
-  value: number;
-  color: string;
-  label: string;
-  count: string;
-}
-
-const data: AttendanceData[] = [
+const data = [
   {
     name: 'Attended Days',
     value: 70,
