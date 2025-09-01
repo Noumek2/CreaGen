@@ -49,15 +49,15 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 flex flex-col items-center justify-center min-h-screen text-center">
         <div className="flex items-center gap-2 mb-6 animate-fade-in">
           <Sparkles className="h-8 w-8 text-creative-pink" />
-          <span className="text-xl font-medium text-creative-pink">CreativeHub</span>
+          <span className="text-xl font-medium text-creative-pink">CreaGen</span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-creative-pink bg-clip-text text-transparent">
-          Unleash Your
-          <span className="block bg-gradient-vibrant bg-clip-text text-transparent">
-            Creative Potential
-          </span>
-        </h1>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 leading-tight">
+            Welcome to
+            <span className="block bg-gradient-creative bg-clip-text text-transparent">
+              CreaGen
+            </span>
+          </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
           Join thousands of creators exploring endless possibilities in cooking, painting, drawing, and beyond. 

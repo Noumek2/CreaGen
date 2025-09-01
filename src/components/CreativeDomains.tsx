@@ -108,7 +108,21 @@ export const CreativeDomains = () => {
                     {domain.description}
                   </p>
                   
-                  <Button variant="secondary" className="w-full">
+                  <Button 
+                    variant="secondary" 
+                    className="w-full"
+                    onClick={() => {
+                      const routes: { [key: string]: string } = {
+                        'Painting & Arts': '/painting',
+                        'Culinary Arts': '/culinary',
+                        'Drawing & Sketching': '/drawing',
+                        'Photography': '/photography',
+                        'Music & Audio': '/music',
+                        'Crafts & DIY': '/crafts'
+                      };
+                      window.location.href = routes[domain.title] || '/';
+                    }}
+                  >
                     Explore Now
                   </Button>
                 </div>
