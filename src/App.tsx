@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
+import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import PaintingPage from "./pages/PaintingPage";
 import DrawingPage from "./pages/DrawingPage";
@@ -28,6 +29,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/painting" element={<PaintingPage />} />
         <Route path="/drawing" element={<DrawingPage />} />

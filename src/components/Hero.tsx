@@ -85,10 +85,12 @@ export const Hero = () => {
             Start Creating
             <Palette className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/20 border-white/30 text-white hover:bg-black/40">
-            Explore Gallery
-            <Sparkles className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/gallery">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/20 border-white/30 text-white hover:bg-black/40">
+              Explore Gallery
+              <Sparkles className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
         
         {/* Creative Icons */}
