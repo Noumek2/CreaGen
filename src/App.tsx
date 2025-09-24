@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
@@ -18,6 +18,28 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const AppContent = () => {
+  const location = useLocation();
+  const showNavigation = location.pathname !== "/";
+
+  return (
+    <div className="min-h-screen bg-background">
+      {showNavigation && <Navigation />}
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/painting" element={<PaintingPage />} />
+        <Route path="/drawing" element={<DrawingPage />} />
+        <Route path="/photography" element={<PhotographyPage />} />
+        <Route path="/music" element={<MusicPage />} />
+        <Route path="/crafts" element={<CraftsPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="light" storageKey="creagen-theme">
@@ -26,21 +48,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <div className="min-h-screen bg-background">
-              <Navigation />
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/auth" element={<Auth />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/painting" element={<PaintingPage />} />
-                <Route path="/drawing" element={<DrawingPage />} />
-                <Route path="/photography" element={<PhotographyPage />} />
-                <Route path="/music" element={<MusicPage />} />
-                <Route path="/crafts" element={<CraftsPage />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </div>
+            <AppContent />
           </BrowserRouter>
         </TooltipProvider>
       </AuthProvider>
