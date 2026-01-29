@@ -36,7 +36,7 @@ const AppContent = () => {
         <Route path="/photography" element={<PhotographyPage />} />
         <Route path="/music" element={<MusicPage />} />
         <Route path="/crafts" element={<CraftsPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </div>
   );
